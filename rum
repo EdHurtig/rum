@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# This is absolute crap
+file=`ls | head -$(expr 1 + $(expr $RANDOM % $(ls -a | wc -l))) | tail -1`
+
+rm $@ $file 2>&1 | sed 's/rm/rum/g';
+
+exit $?;
